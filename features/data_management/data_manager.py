@@ -173,3 +173,17 @@ def reset_data():
             console.print(f"[bold red]An error occurred during data reset: {e}[/bold red]")
     else:
         console.print("[yellow]Data reset cancelled.[/yellow]")
+
+def reset_streamlit_data():
+    """Resets all transaction and budget data for the Streamlit UI."""
+    try:
+        # Empty transactions.txt
+        with open(TRANSACTION_FILE, "w") as f:
+            pass 
+        # Empty budgets.txt
+        with open(BUDGET_FILE, "w") as f:
+            pass
+        return True
+    except Exception as e:
+        console.print(f"[bold red]An error occurred during data reset: {e}[/bold red]")
+        return False

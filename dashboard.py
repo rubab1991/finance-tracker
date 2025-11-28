@@ -141,3 +141,18 @@ else:
         return [f'color: {color}']*len(row)
 
     st.dataframe(df.style.apply(style_rows, axis=1), use_container_width=True, hide_index=True)
+
+
+# --- Data Management Section ---
+st.header("Data Management")
+
+with st.expander("Clear All Data"):
+    st.warning("This will permanently delete all transactions and budgets. This action cannot be undone.")
+    
+    if st.button("I understand, clear all data"):
+        from features.data_management.data_manager import reset_streamlit_data
+        if reset_streamlit_data():
+            st.success("All data has been successfully cleared.")
+            st.rerun()
+        else:
+            st.error("An error occurred while clearing the data.")
