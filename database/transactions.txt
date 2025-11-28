@@ -1,0 +1,5 @@
+15.12.2025,Expense,Food,restaurant,1200000
+2025-11-29,Expense,Food,restaurant,1100000
+2025-11-29,Expense,Transport,travel,1000000
+2025-11-29,Expense,Bills,electricity,1222200
+2025-11-29,Income,Freelance,freelance,20000000
